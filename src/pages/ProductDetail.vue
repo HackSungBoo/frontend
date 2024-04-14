@@ -113,6 +113,7 @@
 
         <Rendering :url="modelUrl" v-if="currentCategoryId !== 4" />
         <Rendering :url="item_3D" v-else />
+        
       </div>
     </div>
     <!-- Similar Products Container -->
@@ -212,11 +213,7 @@ export default {
 
 
 
-      const modelUrl = "/point_cloud.ply";
-    
-
-
-
+    const modelUrl = "/point_cloud.ply";
     onMounted(() => {
 
       axios.get(`/api/items/${productId}`)
@@ -233,11 +230,11 @@ export default {
       axios.get(`/api/items/${productId}/multi/`).then(({ data }) => {
         itemImg.value = data.image_path;
         item_3D.value = data.splat_path;
-        console.log("itemImg.value : ", itemImg.value);
-        console.log("itemImg : ", itemImg);
-        console.log("item_3D.value : ", item_3D.value);
-        console.log("item_3D: ", item_3D);
-
+          console.log("itemImg.value : ", itemImg.value);
+          console.log("itemImg : ", itemImg);
+          console.log("item_3D.value : ", item_3D.value);
+          console.log("item_3D: ", item_3D);
+        
       });
 
       /* const imgSrc = `/api/items/${productId}/image`;
@@ -260,12 +257,17 @@ export default {
     return {
       state, itemImg, item_3D, orderItem, isOrderModalVisible, placeOrder,
       closeOrderModal, modelUrl, openPopup, closePopup, isPopupVisible,
-      formatPrice, getCategoryName, currentTab, showTab,currentCategoryId
+      formatPrice, getCategoryName, currentTab, showTab, currentCategoryId
     };
   },
 };
+
+
+
+
 </script>
 
 <style scoped>
 @import '../assets/css/pages/productdetail.css'
 </style>
+

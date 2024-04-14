@@ -15,6 +15,7 @@ export default {
         url: String
     },
     setup(props) {
+        console.log("URL:",props.url);
         const canvasRef=ref(null);
         let renderer;
         let controls;
