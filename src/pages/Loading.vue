@@ -1,7 +1,7 @@
 <template>
   <div class="websocket-test">
     <h1>WebSocket Test</h1>
-    <button @click="sendMessage">Send</button>
+    <button @click="sendMessage">진행률 확인</button>
     <div class="progress-container">
       <div class="progress-bar" :style="{ width: progressBarWidth }">{{ progressBarWidth }}</div>
     </div>
